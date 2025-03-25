@@ -1,0 +1,330 @@
+
+/* ايقونات */
+.icons-section {
+    background-color: #5da5d8;
+    padding: 20px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.icons-row {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    
+}
+
+.icon-box {
+    color: #ffffff;
+    text-align: center;
+    padding: 20px;
+    flex: 1;
+    min-width: 150px;
+   
+}
+
+.icon-box i {
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+.icon-box h2 {
+    font-size: 30px;
+    margin: 5px 0;
+}
+
+.icon-box p {
+    font-size: 18px;
+}
+
+/* ايقونات */
+
+
+
+/*  */
+
+.services-section {
+    text-align: center; 
+    padding: 40px 10px;
+}
+.services-title{
+    text-align: center; 
+margin-bottom: 20px;
+
+}
+.services-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.service-box {
+    text-decoration: none;
+    width: calc(25% - 20px); 
+    min-width: 250px;
+    background-color: white;
+    padding: 20px;
+    text-align: center;
+    border-radius: 8px;
+    cursor: pointer;
+    border-top: 4px solid #007bff;
+    transition: all 0.3s ease;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    justify-content: center; 
+}
+
+.service-box:hover {
+    transform: translateY(-5px);
+}
+
+.service-box i {
+    font-size: 40px;
+    color: #007bff;
+    margin-bottom: 10px;
+}
+
+.service-box h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.service-box p {
+    font-size: 14px;
+    color: #555;
+}
+.service-box h3, .service-box p {
+    text-align: center;
+    margin: 5px 0;
+}
+
+.service-box a {
+    width: 100%;
+    height: 100%;
+    text-decoration: none; /* إزالة الخط */
+    color: inherit; /* إبقاء اللون كما هو */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+@keyframes floatAnimation1 {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
+
+@keyframes floatAnimation2 {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(20px); }
+}
+
+@keyframes floatAnimation3 {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.4); }
+}
+
+@keyframes floatAnimation4 {
+    0%, 100% { transform: rotate(0deg); }
+    50% { transform: rotate(40deg); }
+}
+
+.service-box:nth-child(1) i { animation: floatAnimation1 1s infinite ease-in-out; }
+.service-box:nth-child(2) i { animation: floatAnimation2 1s infinite ease-in-out; }
+.service-box:nth-child(3) i { animation: floatAnimation3 1s infinite ease-in-out; }
+.service-box:nth-child(4) i { animation: floatAnimation4 1s infinite ease-in-out; }
+.service-box:nth-child(5) i { animation: floatAnimation1 1s infinite ease-in-out; }
+.service-box:nth-child(6) i { animation: floatAnimation2 1.5s infinite ease-in-out; }
+.service-box:nth-child(7) i { animation: floatAnimation3 1.5s infinite ease-in-out; }
+.service-box:nth-child(8) i { animation: floatAnimation4 1s infinite ease-in-out; }
+.service-box:nth-child(9) i { animation: floatAnimation1 1s infinite ease-in-out; }
+/* جعل كل خدمة تأخذ صف بمفردها على الشاشات الصغيرة */
+@media (max-width: 768px) {
+    .service-box {
+        width: 100%;
+    }
+}
+
+/* خدمات */
+
+/*  */
+
+.counter-section {
+    background: linear-gradient(to right, #6a11cb, #2575fc);
+    padding: 40px 0;
+    text-align: center;
+    width: 95%;
+    margin: auto;
+    border-radius: 10px;
+}
+
+.counter-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.counter-box {
+    background: white;
+    padding: 20px;
+    width: 200px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.counter-box img {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 10px;
+}
+
+.counter-box h2 {
+    font-size: 28px;
+    color: black;
+}
+
+.counter-box p {
+    font-size: 16px;
+    color: gray;
+}
+
+/* الشاشات الأصغر من 768px */
+@media (max-width: 768px) {
+    .counter-container {
+        gap: 15px; /* تقليل المسافات بين العناصر */
+    }
+    .counter-box {
+        width: 160px; /* تقليل عرض الصندوق قليلاً */
+        padding: 15px;
+    }
+}
+
+/* الشاشات الأصغر من 480px (تشمل 340px) */
+@media (max-width: 480px) {
+    .counter-container {
+        flex-direction: column; /* جعل العناصر عمودية */
+        align-items: center; /* توسيطها */
+        gap: 10px;
+    }
+    .counter-box {
+        width: 80%; /* جعل الصندوق يأخذ 80% من عرض الشاشة */
+    }
+}
+
+
+/*  */
+
+/* تنسيق عام */
+.portfolio {
+    text-align: center;
+    padding: 50px 20px;
+    background: #f8f8f8;
+}
+.portfolio h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* تصميم الشبكة */
+.portfolio-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+.project {
+    position: relative;
+    width: 300px;
+    overflow: hidden;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+.project:hover {
+    transform: scale(1.05);
+}
+.project img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+.project h3 {
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    padding: 10px;
+    font-size: 18px;
+}
+
+/* تصميم النافذة المنبثقة */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} 
+
+.modal-content {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    max-width: 500px;
+    position: relative;
+}
+.modal img {
+    width: 100%;
+    border-radius: 10px;
+}
+.modal h2 {
+    margin: 10px 0;
+    color: #333;
+}
+.modal p {
+    color: #666;
+}
+.modal a {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 15px;
+    background: #007BFF;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+.modal .close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+    cursor: pointer;
+}
+.button-1 {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: rgb(255, 255, 255);
+    background-color:#0011ff ;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background 0.3s, transform 0.2s;
+    cursor: pointer;
+    margin: 5px auto;
+  }

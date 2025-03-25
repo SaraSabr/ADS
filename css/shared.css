@@ -1,0 +1,461 @@
+*{
+    box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    
+    }
+    
+    body {
+        font-family: "Cairo", sans-serif;
+        line-height: 1.5;
+        overflow-x: hidden;
+        overflow-y: auto; 
+        direction: rtl;
+      }
+   
+    
+    /* ✅✅✅ ناف بار ✅✅✅ */
+    .navbar {
+        background-color: #333;
+        color: white;
+        padding: 10px 0;
+        text-align: center;
+    
+    }
+    .navbar-container {
+        width: 90%;
+        margin: auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .navbar .numbers {
+        flex: 1;
+        text-align: right;
+    }
+    
+    .navbar .spacer {
+        flex: 1;
+    }
+    
+    .navbar .social {
+        flex: 1;
+        text-align: left;
+    }
+    
+    .navbar .social i {
+        margin-left: 10px;
+        cursor: pointer;
+    }
+    
+    /* ✅✅✅ الهيدر ✅✅✅ */
+    .header {
+        background-color: #f8f8f8;
+        padding: 15px 0;
+        border-bottom: 2px solid #ddd;
+    }
+    .header-container {
+        width: 90%;
+        margin: auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .header .logo img {
+        height: 50px;
+    }
+    
+    .header .pages a {
+        margin: 0 10px;
+        text-decoration: none;
+        color: #222;
+        font-weight: bold;
+    }
+    
+    .header .company-name {
+        font-size: 20px;
+        font-weight: bold;
+        color: #333;
+    }
+    
+    /* ✅✅✅ زر التجول  ✅✅✅ */
+    .menu-btn {
+        display: none;
+        font-size: 24px;
+        cursor: pointer;
+        background: none;
+        border: none;
+    }
+
+    /* ✅✅✅ القائمة الجانبية✅✅✅ */
+  .off-canvas {
+        position: fixed;
+        top: 0;
+        right: -250px;
+        width: 250px;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.9);
+        color: white;
+        padding: 20px;
+        transition: right 0.3s ease-in-out;
+    }
+    
+    .off-canvas a {
+        display: block;
+        color: white;
+        text-decoration: none;
+        margin: 15px 0;
+        font-size: 18px;
+    }
+    
+    .off-canvas a:hover {
+        color: #f39c12;
+    }
+    
+/*   */
+.offcanvas-dropdown {
+    display: none;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    background: #444;
+    border-radius: 5px;
+    overflow: hidden;
+    text-align: right;
+    pointer-events: auto; 
+    max-height: 400px; 
+    overflow-y: auto; 
+    cursor: pointer;
+    font-size: 20px;
+    color: white;
+    text-decoration: none;
+}
+
+.offcanvas-dropdown li {
+    padding: 10px;
+    border-bottom: 1px solid #555;
+}
+
+.offcanvas-dropdown li a {
+    text-decoration: none;
+    color: white;
+    display: block;
+}
+
+/*  */
+.offcanvas-dropdown.show {
+    display: block;
+}
+
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: #444;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 180px;
+    display: none; 
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.dropdown-menu li {
+    border-bottom: 1px solid #555;
+}
+
+.dropdown-menu li:last-child {
+    border-bottom: none;
+}
+
+.dropdown-menu li a {
+    display: block;
+    padding: 10px;
+    color: #fff;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.dropdown-menu li a:hover {
+    background: #ff9800;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+
+
+/* main section */
+
+
+.main-section{
+
+    background-image: url(../img/bg.png);
+    padding: 10px;
+
+}
+.title {
+    margin-bottom: 10px;
+    text-align: right;
+    font-size: 30px;
+    color: white;
+
+}
+
+.title h2 {
+    margin-bottom: 10px; 
+}
+
+.title p {
+    margin-top: 10px; 
+    font-size: 20px; 
+}
+
+
+/* main section */
+
+
+
+
+
+
+/* footer */
+    .footer {
+        background: #111;
+        color: #fff;
+        padding: 40px 0;
+        text-align: right;
+        direction: rtl;
+    }
+ 
+    
+    .footer-container {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        max-width: 1200px;
+        margin: auto;
+    }
+    
+    .footer-section {
+        width: 23%;
+    }
+    .footer-section .logo {
+        font-size: 24px;
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+    
+    .footer-section img {
+        width: 100px; 
+        margin-bottom: 15px;
+    }
+    
+    .footer-section p {
+        font-size: 16px;
+        margin: 5px 0;
+    }
+    .footer-section h3 {
+        font-size: 18px;
+        margin-bottom: 15px;
+    }
+    .footer-section a {
+        color: #ff9800; 
+        text-decoration: none;
+        font-weight: bold;
+    }
+    
+    .social-icons a:hover {
+        color: #ff9800; 
+    }
+    .footer-section ul {
+        list-style: none;
+        padding: 0;
+    }
+    
+    .footer-section ul li {
+        margin-bottom: 10px;
+    }
+    
+    .footer-section ul li a {
+        color: #ddd;
+        text-decoration: none;
+    }
+    
+    .footer-section ul li a:hover {
+        color: #f90;
+    }
+    
+    .social-icons a {
+        display: inline-block;
+        margin-left: 10px;
+        font-size: 20px;
+        color: #fff;
+    }
+    
+   
+    form {
+        display: flex;
+        border: 1px solid #f90;
+        border-radius: 5px;
+        overflow: hidden;
+    }
+    
+    form input {
+        flex: 1;
+        padding: 10px;
+        border: none;
+        outline: none;
+        background: #222;
+        color: #fff;
+    }
+    
+    form button {
+        background: #f90;
+        border: none;
+        padding: 10px 15px;
+        color: white;
+        cursor: pointer;
+    }
+    
+    .footer-bottom {
+        text-align: center;
+        padding: 20px;
+        background: #000;
+        margin-top: 20px;
+    }
+    
+    .footer-bottom a {
+        color: #f90;
+        text-decoration: none;
+    }
+    
+    .footer-bottom a:hover {
+        text-decoration: underline;
+    }
+
+    .floating-icons {
+        position: fixed;
+        bottom: 20px; 
+        right: 20px; 
+        display: flex;
+        flex-direction: column;
+        gap: 10px; 
+        z-index: 1000; 
+    }
+    
+    .floating-icons a {
+        width: 50px;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        background-color: #25d366; 
+        color: #fff;
+        font-size: 24px;
+        text-decoration: none;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        transition: transform 0.3s ease;
+    }
+    
+    .floating-icons .phone-icon {
+        background-color: #ff9800; 
+    }
+    
+    .floating-icons a:hover {
+        transform: scale(1.1);
+    }
+    
+    /* ✅✅✅✅✅✅ */
+
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-section {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .social-icons {
+        justify-content: center;
+    }
+
+    form {
+        flex-direction: column;
+        border: none;
+    }
+
+    form input {
+        text-align: center;
+    }
+
+    form button {
+        width: 100%;
+    }
+    .floating-icons {
+        right: 10px;
+        bottom: 10px;
+    }
+    .navbar {
+        justify-content: space-between;
+    }
+    .navbar .spacer {
+        display: none;
+    }
+    .header {
+        justify-content: space-between;
+    }
+    .header .pages {
+        display: none;
+    }
+    .menu-btn {
+        display: block;
+    }
+    
+.dropdown-menu {
+    width: 100%;
+}
+
+}
+
+    /* ✅✅✅✅✅✅ */
+@media (max-width: 480px) {
+    .footer {
+        padding: 20px 0;
+    }
+
+    .footer-section h3 {
+        font-size: 16px;
+    }
+
+    .footer-section p,
+    .footer-section ul li a {
+        font-size: 14px;
+    }
+
+    .footer-section .logo {
+        font-size: 20px;
+    }
+
+    .social-icons a {
+        font-size: 18px;
+        margin: 5px;
+    }
+
+    .footer-bottom {
+        font-size: 14px;
+    }
+}
+
