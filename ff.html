@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>موقعي</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        *{
+    box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    
+    }
+    
+    body {
+        font-family: "Cairo", sans-serif;
+        line-height: 28px;
+        overflow-x: hidden;
+        overflow-y: auto; 
+        direction: rtl;
+      }
+
+    
+    /* ✅✅✅ ناف بار (Desktop) ✅✅✅ */
+    .navbar {
+        background-color: #333;
+        color: white;
+        padding: 10px 0;
+        text-align: center;
+    }
+    .navbar-container {
+        width: 90%;
+        margin: auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .navbar .numbers {
+        flex: 1;
+        text-align: right;
+    }
+    
+    .navbar .spacer {
+        flex: 1;
+    }
+    
+    .navbar .social {
+        flex: 1;
+        text-align: left;
+    }
+    
+    .navbar .social i {
+        margin-left: 10px;
+        cursor: pointer;
+    }
+    
+    /* ✅✅✅ الهيدر (Desktop) ✅✅✅ */
+    .header {
+        background-color: #f8f8f8;
+        padding: 15px 0;
+        border-bottom: 2px solid #ddd;
+    }
+    .header-container {
+        width: 90%;
+        margin: auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .header .logo img {
+        height: 50px;
+    }
+    
+    .header .pages a {
+        margin: 0 10px;
+        text-decoration: none;
+        color: #222;
+        font-weight: bold;
+    }
+    
+    .header .company-name {
+        font-size: 20px;
+        font-weight: bold;
+        color: #333;
+    }
+    
+    /* ✅✅✅ زر التجول (يظهر فقط في الموبايل) ✅✅✅ */
+    .menu-btn {
+        display: none;
+        font-size: 24px;
+        cursor: pointer;
+        background: none;
+        border: none;
+    }
+
+
+   
+    
+    /* ✅✅✅ القائمة الجانبية (تُنشأ فقط عند الحاجة) ✅✅✅ */
+    .off-canvas {
+        position: fixed;
+        top: 0;
+        right: -250px;
+        width: 250px;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.9);
+        color: white;
+        padding: 20px;
+        transition: right 0.3s ease-in-out;
+    }
+    
+    .off-canvas a {
+        display: block;
+        color: white;
+        text-decoration: none;
+        margin: 15px 0;
+        font-size: 18px;
+    }
+    
+    .off-canvas a:hover {
+        color: #f39c12;
+    }
+    
+    /* ✅✅✅ الميديا كويري للموبايل ✅✅✅ */
+    @media (max-width: 768px) {
+        .navbar {
+            justify-content: space-between;
+        }
+        .navbar .spacer {
+            display: none;
+        }
+        .header {
+            justify-content: space-between;
+        }
+        .header .pages {
+            display: none;
+        }
+        .menu-btn {
+            display: block;
+        }
+        
+    .dropdown-menu {
+        width: 100%;
+    }
+
+    }
+    
+    .menu-btn {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            background: #333;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            cursor: pointer;
+            z-index: 1001;
+        }
+        .off-canvas {
+            position: fixed;
+            top: 0;
+            right: -250px;
+            width: 250px;
+            height: 100%;
+            background: #222;
+            color: white;
+            padding: 20px;
+            transition: right 0.3s ease-in-out;
+            z-index: 1000;
+        }
+        .off-canvas a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            padding: 10px 0;
+        }
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            font-size: 25px;
+            cursor: pointer;
+        }
+     
+        .offcanvas-dropdown {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: #333;
+            width: 100%;
+            padding: 10px 0;
+            list-style: none;
+        }
+        .offcanvas-dropdown li {
+            padding: 5px 10px;
+        }
+        .offcanvas-dropdown li a {
+            color: white;
+            display: block;
+        }
+/* تنسيق الدروب داون */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: #444;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 180px;
+    display: none; /* القائمة مخفية افتراضيًا */
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.dropdown-menu li {
+    border-bottom: 1px solid #555;
+}
+
+.dropdown-menu li:last-child {
+    border-bottom: none;
+}
+
+.dropdown-menu li a {
+    display: block;
+    padding: 10px;
+    color: #fff;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.dropdown-menu li a:hover {
+    background: #ff9800;
+}
+
+/* إظهار القائمة عند تمرير الفأرة */
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+
+    .footer {
+        background: #111;
+        color: #fff;
+        padding: 40px 0;
+        text-align: right;
+        direction: rtl;
+    }
+ 
+    
+    .footer-container {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        max-width: 1200px;
+        margin: auto;
+    }
+    
+    .footer-section {
+        width: 23%;
+    }
+    .footer-section .logo {
+        font-size: 24px;
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+    
+    .footer-section img {
+        width: 100px; /* حجم اللوجو */
+        margin-bottom: 15px;
+    }
+    
+    .footer-section p {
+        font-size: 16px;
+        margin: 5px 0;
+    }
+    .footer-section h3 {
+        font-size: 18px;
+        margin-bottom: 15px;
+    }
+    .footer-section a {
+        color: #ff9800; 
+        text-decoration: none;
+        font-weight: bold;
+    }
+    
+    .social-icons a:hover {
+        color: #ff9800; 
+    }
+    .footer-section ul {
+        list-style: none;
+        padding: 0;
+    }
+    
+    .footer-section ul li {
+        margin-bottom: 10px;
+    }
+    
+    .footer-section ul li a {
+        color: #ddd;
+        text-decoration: none;
+    }
+    
+    .footer-section ul li a:hover {
+        color: #f90;
+    }
+    
+    .social-icons a {
+        display: inline-block;
+        margin-left: 10px;
+        font-size: 20px;
+        color: #fff;
+    }
+ 
+   
+    form {
+        display: flex;
+        border: 1px solid #f90;
+        border-radius: 5px;
+        overflow: hidden;
+    }
+    
+    form input {
+        flex: 1;
+        padding: 10px;
+        border: none;
+        outline: none;
+        background: #222;
+        color: #fff;
+    }
+    
+    form button {
+        background: #f90;
+        border: none;
+        padding: 10px 15px;
+        color: white;
+        cursor: pointer;
+    }
+    
+    .footer-bottom {
+        text-align: center;
+        padding: 20px;
+        background: #000;
+        margin-top: 20px;
+    }
+    
+    .footer-bottom a {
+        color: #f90;
+        text-decoration: none;
+    }
+    
+    .footer-bottom a:hover {
+        text-decoration: underline;
+    }
+    /* أجهزة التابلت (شاشات متوسطة من 768px فأقل) */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-section {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .social-icons {
+        justify-content: center;
+    }
+
+    form {
+        flex-direction: column;
+        border: none;
+    }
+
+    form input {
+        text-align: center;
+    }
+
+    form button {
+        width: 100%;
+    }
+}
+
+/* الهواتف الذكية (شاشات صغيرة من 480px فأقل) */
+@media (max-width: 480px) {
+    .footer {
+        padding: 20px 0;
+    }
+
+    .footer-section h3 {
+        font-size: 16px;
+    }
+
+    .footer-section p,
+    .footer-section ul li a {
+        font-size: 14px;
+    }
+
+    .footer-section .logo {
+        font-size: 20px;
+    }
+
+    .social-icons a {
+        font-size: 18px;
+        margin: 5px;
+    }
+
+    .footer-bottom {
+        font-size: 14px;
+    }
+}
+.floating-icons {
+    position: fixed;
+    bottom: 20px; /* المسافة من الأسفل */
+    right: 20px; /* المسافة من اليمين */
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* المسافة بين الأيقونات */
+    z-index: 1000; /* لضمان ظهورها فوق المحتوى */
+}
+
+.floating-icons a {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: #25d366; /* لون واتساب */
+    color: #fff;
+    font-size: 24px;
+    text-decoration: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.floating-icons .phone-icon {
+    background-color: #ff9800; /* لون الهاتف */
+}
+
+.floating-icons a:hover {
+    transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+    .floating-icons {
+        right: 10px;
+        bottom: 10px;
+    }
+}
+.overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5); /* تعتيم 50% */
+            display: none; /* إخفاء الافتراضي */
+            z-index: 1000; /* أسفل القائمة */
+        }
+    </style>
+</head>
+<body>
+ <!-- ✅✅✅ الناف بار ✅✅✅ -->
+ <div class="navbar">
+    <div class="navbar-container">
+    <div class="numbers">📞 123-456-789</div>
+    <div class="spacer"></div>
+    <div class="social">
+        <i class="fab fa-facebook"></i>
+        <i class="fab fa-twitter"></i>
+        <i class="fab fa-instagram"></i>
+    </div>
+</div>
+</div>
+
+<!-- ✅✅✅ الهيدر ✅✅✅ -->
+<div class="header">
+    <div class="header-container">
+    <div class="logo"><img src="logo.png" alt="Logo"></div>
+    <div class="pages">
+        <a href="#">الرئيسية</a>
+        <div class="dropdown">
+            <a href="#">الخدمات ▼</a>
+            <ul class="dropdown-menu">
+                <li><a href="#">برمجة</a></li>
+                <li><a href="#">تصميم مواقع</a></li>
+                <li><a href="#">سيو</a></li>
+                <li><a href="#">تسويق الكتروني</a></li>
+                <li><a href="#">اعلانات جوجل</a></li>
+                <li><a href="#">ايميل ماركتنج</a></li>
+                <li><a href="#">انظمة تحليل البيانات</a></li>
+            </ul>
+        </div>
+        <a href="#">من نحن</a>
+        <a href="#">اتصل بنا</a>
+    </div>
+    <div class="company-name">شركة مميزة</div>
+    <button class="menu-btn" onclick="toggleMenu()">
+        <i class="fas fa-bars"></i>
+    </button>
+</div>
+</div>
+
+<footer class="footer">
+    <div class="footer-container">
+        <div class="footer-section">
+            <h2 class="logo">شركة مميزة</h2>
+            <div class="logo"><img src="logo.png" alt="Logo"></div>
+            <p><strong>اتصل بنا: </strong>*********</p>
+            <p><strong>راسلنا عبر البريد الإلكتروني:</strong> <a href="mailto:info@example.com">info@example.com</a></p>
+            <div class="social-icons">
+                <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="#"><i class="fa-brands fa-youtube"></i></a>
+            </div>
+        </div>
+
+        <div class="footer-section">
+            <h3>روابط سريعة</h3>
+            <ul>
+                <li><a href="#">من نحن</a></li>
+                <li><a href="#">الشهادات</a></li>
+                <li><a href="#">فريقنا</a></li>
+                <li><a href="#">أحدث المقالات</a></li>
+                <li><a href="#">سياسة الخصوصية</a></li>
+                <li><a href="#">سياسة الاسترداد</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-section">
+            <h3>خدماتنا</h3>
+            <ul>
+                <li><a href="#">برمجة</a></li>
+                <li><a href="#"> تصميم مواقع</a></li>
+                <li><a href="#">سيو</a></li>
+                <li><a href="#">تسويق الكتروني</a></li>
+                <li><a href="#">اعلانات جوجل</a></li>
+                <li><a href="#">ايميل ماركتنج</a></li>
+                <li><a href="#">انظمة تحليل البيانات</a></li>
+
+            </ul>
+        </div>
+
+        <div class="footer-section">
+            <h3>اشترك معنا</h3>
+            <p>اشترك للحصول على آخر الأخبار والمقالات. لن نرسل لك رسائل غير مرغوب فيها.</p>
+            <form>
+                <input type="email" placeholder="أدخل بريدك الإلكتروني">
+                <button type="submit"><i class="fa-solid fa-paper-plane"></i></button>
+            </form>
+            <p>🏆 أفضل وكالة أعمال حائزة على جوائز</p>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>© 2025 جميع الحقوق محفوظة <a href="#">شركة مميزه</a>. تصميم بواسطة <a href="#">لالالالالا</a></p>
+    </div>
+</footer>
+<div class="floating-icons">
+    <a href="tel:+123456789" class="phone-icon" title="اتصل بنا">
+        <i class="fa-solid fa-phone"></i>
+    </a>
+    <a href="https://wa.me/123456789" target="_blank" class="whatsapp-icon" title="تواصل عبر واتساب">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        function toggleMenu() {
+            let existingMenu = document.getElementById("offCanvas");
+            let overlay = document.getElementById("overlay");
+            let body = document.body;
+    
+            if (!existingMenu) {
+                let menu = document.createElement("div");
+                menu.id = "offCanvas";
+                menu.className = "off-canvas";
+    
+                menu.innerHTML = `
+                    <span class="close-btn" onclick="toggleMenu()">&times;</span>
+                    <a href="#">الرئيسية</a>
+                    <a href="#">من نحن</a>
+                    <a href="#">اتصل بنا</a>
+                    <div class="dropdown">
+                        <a href="#" class="dropdown-toggle">الخدمات ▼</a>
+                        <ul class="offcanvas-dropdown">
+                            <li><a href="#">برمجة</a></li>
+                            <li><a href="#">تصميم مواقع</a></li>
+                            <li><a href="#">سيو</a></li>
+                            <li><a href="#">تسويق الكتروني</a></li>
+                            <li><a href="#">اعلانات جوجل</a></li>
+                            <li><a href="#">ايميل ماركتنج</a></li>
+                            <li><a href="#">انظمة تحليل البيانات</a></li>
+                        </ul>
+                    </div>
+                `;
+    
+                document.body.appendChild(menu);
+                setTimeout(() => {
+                    menu.style.right = "0px";
+                    overlay.style.display = "block"; // ✅ إظهار التعتيم
+                    body.style.overflow = "hidden"; // ✅ منع التمرير
+                }, 10);
+    
+                setTimeout(() => {
+                    let dropdownToggle = document.querySelector(".dropdown-toggle");
+                    let dropdownMenu = document.querySelector(".offcanvas-dropdown");
+    
+                    dropdownToggle.addEventListener("click", function (event) {
+                        event.preventDefault();
+                        dropdownMenu.style.display = dropdownMenu.style.display === "block" ? "none" : "block";
+                    });
+    
+                    document.querySelectorAll(".offcanvas-dropdown a").forEach(function (link) {
+                        link.addEventListener("click", function (event) {
+                            event.stopPropagation();
+                            window.location.href = this.href;
+                        });
+                    });
+    
+                    document.addEventListener("click", function (event) {
+                        if (!dropdownToggle.contains(event.target) && !dropdownMenu.contains(event.target)) {
+                            dropdownMenu.style.display = "none";
+                        }
+                    });
+    
+                }, 20);
+    
+            } else {
+                existingMenu.style.right = "-250px";
+                overlay.style.display = "none"; // ✅ إخفاء التعتيم
+                body.style.overflow = "auto"; // ✅ إعادة التمرير
+    
+                setTimeout(() => {
+                    existingMenu.remove();
+                }, 300);
+            }
+        }
+    
+        window.toggleMenu = toggleMenu;
+    
+        // ✅ إغلاق القائمة عند الضغط على الـ Overlay
+        document.getElementById("overlay").addEventListener("click", function () {
+            toggleMenu();
+        });
+    });
+    </script>
+
+</body>
+</html>

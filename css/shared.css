@@ -16,10 +16,12 @@
     
     /* ✅✅✅ ناف بار ✅✅✅ */
     .navbar {
-        background-color: #333;
+        background: linear-gradient(135deg, #091f5c, #3b3f92, #6a0dad, #9b5de5);
         color: white;
         padding: 10px 0;
         text-align: center;
+        border-top: 3px solid;
+        border-image: linear-gradient(135deg, #091f5c, #3b3f92, #6a0dad) 1;
     
     }
     .navbar-container {
@@ -50,9 +52,11 @@
     
     /* ✅✅✅ الهيدر ✅✅✅ */
     .header {
-        background-color: #f8f8f8;
+        background: linear-gradient(135deg, #091f5c, #3b3f92, #6a0dad, #9b5de5);
         padding: 15px 0;
-        border-bottom: 2px solid #ddd;
+        border-bottom: 3px solid;
+        border-image: linear-gradient(135deg, #091f5c, #3b3f92, #6a0dad) 1;
+        color: #ffffff;        
     }
     .header-container {
         width: 90%;
@@ -68,14 +72,14 @@
     .header .pages a {
         margin: 0 10px;
         text-decoration: none;
-        color: #222;
+        color: #ffffff;
         font-weight: bold;
     }
     
     .header .company-name {
         font-size: 20px;
         font-weight: bold;
-        color: #333;
+        color: #ffffff;
     }
     
     /* ✅✅✅ زر التجول  ✅✅✅ */
@@ -85,6 +89,7 @@
         cursor: pointer;
         background: none;
         border: none;
+    color: #ffffff;
     }
 
     /* ✅✅✅ القائمة الجانبية✅✅✅ */
@@ -92,12 +97,14 @@
         position: fixed;
         top: 0;
         right: -250px;
-        width: 250px;
+        width: 270px;
         height: 100%;
-        background: rgba(0, 0, 0, 0.9);
-        color: white;
+        background: linear-gradient(135deg, #091f5c, #3b3f92, #6a0dad, #9b5de5);
+        color: rgb(255, 255, 255);
         padding: 20px;
         transition: right 0.3s ease-in-out;
+        z-index: 200;
+
     }
     
     .off-canvas a {
@@ -109,7 +116,7 @@
     }
     
     .off-canvas a:hover {
-        color: #f39c12;
+        color: #9b5de5;
     }
     
 /*   */
@@ -118,7 +125,7 @@
     list-style: none;
     padding: 0;
     margin: 0;
-    background: #444;
+    background: linear-gradient(135deg, #091f5c, #3b3f92, #6a0dad, #9b5de5);
     border-radius: 5px;
     overflow: hidden;
     text-align: right;
@@ -129,6 +136,7 @@
     font-size: 20px;
     color: white;
     text-decoration: none;
+    width: 230px;
 }
 
 .offcanvas-dropdown li {
@@ -151,24 +159,26 @@
 .dropdown {
     position: relative;
     display: inline-block;
+    z-index: 200;
 }
 
 .dropdown-menu {
     position: absolute;
     top: 100%;
     right: 0;
-    background: #444;
+    background: linear-gradient(135deg, #091f5c, #3b3f92, #6a0dad, #9b5de5);
     list-style: none;
     padding: 0;
     margin: 0;
-    width: 180px;
+    width: 220px;
     display: none; 
     border-radius: 5px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 6px rgba(255, 255, 255, 0.2);
 }
 
 .dropdown-menu li {
-    border-bottom: 1px solid #555;
+    border-bottom: 3px solid;
+        border-image: linear-gradient(135deg, #091f5c, #3b3f92, #6a0dad) 1;
 }
 
 .dropdown-menu li:last-child {
@@ -184,7 +194,7 @@
 }
 
 .dropdown-menu li a:hover {
-    background: #ff9800;
+    background: #9b5de5;
 }
 
 .dropdown:hover .dropdown-menu {
@@ -198,7 +208,7 @@
 
 .main-section{
 
-    background-image: url(../img/bg.png);
+    background-image: url(../img/rm378-08.jpg);
     padding: 10px;
 
 }
@@ -219,21 +229,144 @@
     font-size: 20px; 
 }
 
+.hero-buttons {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+
+
+.button-1 i{
+margin:5px ;
+font-size: 20px;
+}
+@keyframes border-animation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.button-1 {
+    display: inline-block;
+    padding: 12px 24px;
+    font-size: 16px;
+    color: white;
+    background-color: #6a0dad;
+    border-radius: 8px;
+    text-decoration: none;
+    cursor: pointer;
+    margin: 10px;
+    position: relative;
+    z-index: 1;
+    border: 3px solid transparent;
+}
+.button-1whats {
+    display: inline-block;
+    padding: 12px 24px;
+    font-size: 16px;
+    color: white;
+    background-color: #25D366;
+    border-radius: 8px;
+    text-decoration: none;
+    cursor: pointer;
+    margin: 10px;
+    position: relative;
+    z-index: 1;
+    border: 3px solid transparent;
+}
+.button-1whats::before {
+    content: "";
+    position: absolute;
+    top: -3px;
+    left: -3px;
+    right: -3px;
+    bottom: -3px;
+    border-radius: inherit;
+    background: linear-gradient(120deg, rgba(165, 152, 152, 0.9), rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.3));
+    background-size: 200% 200%;
+    z-index: 1;
+    animation: border-animation 1s linear infinite;
+    pointer-events: none;
+
+    /* تقنية الإخفاء لجعل الخلفية داخل الزر غير متأثرة */
+    -webkit-mask: linear-gradient(white 0 0) content-box, linear-gradient(white 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    padding: 3px; /* سمك البوردر */
+}
+.button-1whats i{
+    margin:5px ;
+    font-size: 20px;
+    }
+.button-1call {
+    display: inline-block;
+    padding: 12px 24px;
+    font-size: 16px;
+    color: white;
+    background-color: #091f5c;
+    border-radius: 8px;
+    text-decoration: none;
+    cursor: pointer;
+    margin: 10px;
+    position: relative;
+    z-index: 1;
+    border: 3px solid transparent;
+}
+.button-1call::before {
+    content: "";
+    position: absolute;
+    top: -3px;
+    left: -3px;
+    right: -3px;
+    bottom: -3px;
+    border-radius: inherit;
+    background: linear-gradient(120deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.3));
+    background-size: 200% 200%;
+    z-index: 1;
+    animation: border-animation 1s linear infinite;
+    pointer-events: none;
+    /* تقنية الإخفاء لجعل الخلفية داخل الزر غير متأثرة */
+    -webkit-mask: linear-gradient(white 0 0) content-box, linear-gradient(white 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    padding: 3px; /* سمك البوردر */
+}
+.button-1call i{
+    margin:5px ;
+    font-size: 20px;
+    }
+/* التدرج اللوني للبوردر فقط */
+/* .button-1::before {
+    content: "";
+    position: absolute;
+    top: -3px;
+    left: -3px;
+    right: -3px;
+    bottom: -3px;
+    border-radius: inherit;
+    background: linear-gradient(120deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.3));
+    background-size: 200% 200%;
+    z-index: 1;
+    animation: border-animation 1s linear infinite;
+    pointer-events: none;
+    -webkit-mask: linear-gradient(white 0 0) content-box, linear-gradient(white 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    padding: 3px; 
+} */
+
 
 /* main section */
 
-
-
-
-
-
 /* footer */
     .footer {
-        background: #111;
+        background: linear-gradient(135deg, #091f5c, #3b3f92, #6a0dad, #9b5de5);
         color: #fff;
         padding: 40px 0;
         text-align: right;
-        direction: rtl;
+        border-top: 5px solid;
+        border-image: linear-gradient(135deg, #091f5c, #3b3f92, #6a0dad) 1;
     }
  
     
@@ -274,7 +407,7 @@
     }
     
     .social-icons a:hover {
-        color: #ff9800; 
+        color: #9b5de5; 
     }
     .footer-section ul {
         list-style: none;
@@ -291,7 +424,7 @@
     }
     
     .footer-section ul li a:hover {
-        color: #f90;
+        color: #9b5de5;
     }
     
     .social-icons a {
@@ -359,7 +492,7 @@
         align-items: center;
         justify-content: center;
         border-radius: 50%;
-        background-color: #25d366; 
+        background-color: #25D366; 
         color: #fff;
         font-size: 24px;
         text-decoration: none;
@@ -368,7 +501,7 @@
     }
     
     .floating-icons .phone-icon {
-        background-color: #ff9800; 
+        background-color: #0d6efd; 
     }
     
     .floating-icons a:hover {
@@ -427,7 +560,11 @@
 .dropdown-menu {
     width: 100%;
 }
-
+.buttons {
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+}
 }
 
     /* ✅✅✅✅✅✅ */
@@ -456,6 +593,11 @@
 
     .footer-bottom {
         font-size: 14px;
+    }
+    .buttons {
+        display: flex;
+        flex-direction: column; 
+        align-items: center; 
     }
 }
 

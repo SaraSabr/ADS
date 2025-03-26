@@ -1,8 +1,8 @@
 
 /* ايقونات */
 .icons-section {
-    background-color: #5da5d8;
-    padding: 20px;
+    background: linear-gradient(135deg, #091f5c, #3b3f92, #6a0dad, #9b5de5);
+    padding: 10px;
     margin: 0 auto;
     text-align: center;
 }
@@ -11,21 +11,20 @@
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
-    
 }
 
 .icon-box {
     color: #ffffff;
     text-align: center;
-    padding: 20px;
+    padding: 10px;
     flex: 1;
-    min-width: 150px;
-   
+    min-width: 150px; 
+
 }
 
 .icon-box i {
     font-size: 40px;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
 }
 
 .icon-box h2 {
@@ -39,17 +38,14 @@
 
 /* ايقونات */
 
-
-
-/*  */
-
+/* الخدمات */
 .services-section {
     text-align: center; 
     padding: 40px 10px;
 }
 .services-title{
     text-align: center; 
-margin-bottom: 20px;
+    margin-bottom: 20px;
 
 }
 .services-container {
@@ -70,7 +66,7 @@ margin-bottom: 20px;
     text-align: center;
     border-radius: 8px;
     cursor: pointer;
-    border-top: 4px solid #007bff;
+    border-top: 4px solid #6a0dad;
     transition: all 0.3s ease;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
     display: flex;
@@ -85,18 +81,19 @@ margin-bottom: 20px;
 
 .service-box i {
     font-size: 40px;
-    color: #007bff;
+    color: #6a0dad;
     margin-bottom: 10px;
 }
 
 .service-box h3 {
     font-size: 20px;
     margin-bottom: 10px;
+    color: #091f5c;
 }
 
 .service-box p {
     font-size: 14px;
-    color: #555;
+    color: #000000;
 }
 .service-box h3, .service-box p {
     text-align: center;
@@ -106,8 +103,8 @@ margin-bottom: 20px;
 .service-box a {
     width: 100%;
     height: 100%;
-    text-decoration: none; /* إزالة الخط */
-    color: inherit; /* إبقاء اللون كما هو */
+    text-decoration: none; 
+    color: inherit;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -141,51 +138,45 @@ margin-bottom: 20px;
 .service-box:nth-child(5) i { animation: floatAnimation1 1s infinite ease-in-out; }
 .service-box:nth-child(6) i { animation: floatAnimation2 1.5s infinite ease-in-out; }
 .service-box:nth-child(7) i { animation: floatAnimation3 1.5s infinite ease-in-out; }
-.service-box:nth-child(8) i { animation: floatAnimation4 1s infinite ease-in-out; }
-.service-box:nth-child(9) i { animation: floatAnimation1 1s infinite ease-in-out; }
-/* جعل كل خدمة تأخذ صف بمفردها على الشاشات الصغيرة */
-@media (max-width: 768px) {
-    .service-box {
-        width: 100%;
-    }
-}
 
 /* خدمات */
 
-/*  */
-
+/* العداد */
 .counter-section {
-    background: linear-gradient(to right, #6a11cb, #2575fc);
-    padding: 40px 0;
+    background: linear-gradient(135deg, #091f5c, #3b3f92, #6a0dad, #9b5de5);
+    padding: 50px 20px;
     text-align: center;
-    width: 95%;
-    margin: auto;
+    width: 100%;
     border-radius: 10px;
 }
 
 .counter-container {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     gap: 20px;
 }
 
 .counter-box {
     background: white;
-    padding: 20px;
+    padding: 25px;
     width: 200px;
     border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.counter-box img {
-    width: 50px;
-    height: 50px;
+.counter-box i {
+    font-size: 40px;
+    color: #6a0dad;
     margin-bottom: 10px;
+    transition: color 0.3s ease;
 }
 
 .counter-box h2 {
-    font-size: 28px;
-    color: black;
+    font-size: 30px;
+    color: #333;
+    font-weight: bold;
 }
 
 .counter-box p {
@@ -193,33 +184,17 @@ margin-bottom: 20px;
     color: gray;
 }
 
-/* الشاشات الأصغر من 768px */
-@media (max-width: 768px) {
-    .counter-container {
-        gap: 15px; /* تقليل المسافات بين العناصر */
-    }
-    .counter-box {
-        width: 160px; /* تقليل عرض الصندوق قليلاً */
-        padding: 15px;
-    }
+.counter-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
-/* الشاشات الأصغر من 480px (تشمل 340px) */
-@media (max-width: 480px) {
-    .counter-container {
-        flex-direction: column; /* جعل العناصر عمودية */
-        align-items: center; /* توسيطها */
-        gap: 10px;
-    }
-    .counter-box {
-        width: 80%; /* جعل الصندوق يأخذ 80% من عرض الشاشة */
-    }
+.counter-box:hover i {
+    color: #9b5de5;
 }
 
-
-/*  */
-
-/* تنسيق عام */
+/* العداد */
+/* اعمالنا */
 .portfolio {
     text-align: center;
     padding: 50px 20px;
@@ -231,7 +206,6 @@ margin-bottom: 20px;
     color: #333;
 }
 
-/* تصميم الشبكة */
 .portfolio-grid {
     display: flex;
     flex-wrap: wrap;
@@ -266,19 +240,19 @@ margin-bottom: 20px;
     font-size: 18px;
 }
 
-/* تصميم النافذة المنبثقة */
 .modal {
-    display: none;
+    display: none; 
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     background: rgba(0, 0, 0, 0.7);
-    display: flex;
     justify-content: center;
     align-items: center;
-} 
+    z-index: 200;
+}
+
 
 .modal-content {
     background: white;
@@ -315,16 +289,40 @@ margin-bottom: 20px;
     font-size: 24px;
     cursor: pointer;
 }
-.button-1 {
-    display: inline-block;
-    padding: 10px 20px;
-    font-size: 16px;
-    color: rgb(255, 255, 255);
-    background-color:#0011ff ;
-    border: none;
-    border-radius: 5px;
-    text-decoration: none;
-    transition: background 0.3s, transform 0.2s;
-    cursor: pointer;
-    margin: 5px auto;
-  }
+/* اعمالنا */
+
+/* خريطة */
+  .map-container {
+    width: 100%;
+    height: 400px;
+    margin-top: 20px;
+    text-align: center;
+}
+/* خريطة */
+
+
+/* media */
+@media (max-width: 768px) {
+    .counter-container {
+        gap: 15px; 
+    }
+    .counter-box {
+        width: 160px; 
+        padding: 15px;
+    }
+    .service-box {
+        width: 100%;
+    }
+}
+
+
+@media (max-width: 480px) {
+    .counter-container {
+        flex-direction: column; 
+        align-items: center; 
+        gap: 10px;
+    }
+    .counter-box {
+        width: 80%; 
+    }
+}

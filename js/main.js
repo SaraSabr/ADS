@@ -41,39 +41,56 @@ function toggleMenu() {
 }
 
 
+function toggleDropdown(event) {
+    event.preventDefault();
+    let dropdownMenu = event.target.nextElementSibling; 
+    dropdownMenu.classList.toggle("show");
+}
 
-// تشغيل الكود بعد تحميل الصفحة بالكامل
-window.onload = function () {
-    // إخفاء النافذة عند تحميل الصفحة (تأكد أنها مغلقة في البداية)
-    document.getElementById("modal").style.display = "none";
 
-    // تحديد جميع الصور داخل المشاريع
-    const images = document.querySelectorAll(".project-img");
 
-    images.forEach(img => {
+
+document.addEventListener("DOMContentLoaded", function () {
+    const modal = document.getElementById("modal");
+    const modalImg = document.getElementById("modal-img");
+    const modalTitle = document.getElementById("modal-title");
+    const modalDesc = document.getElementById("modal-desc");
+    const modalLink = document.getElementById("modal-link");
+
+    // تأكدي أن المودال مخفي عند تحميل الصفحة
+    modal.style.display = "none";
+
+    // تحديد جميع المشاريع
+    const projects = document.querySelectorAll(".project-img");
+
+    projects.forEach(img => {
         img.addEventListener("click", function () {
             const imageSrc = this.getAttribute("data-src");
             const title = this.getAttribute("data-title");
             const description = this.getAttribute("data-desc");
             const link = this.getAttribute("data-link");
 
-            document.getElementById("modal-img").src = imageSrc;
-            document.getElementById("modal-title").innerText = title;
-            document.getElementById("modal-desc").innerText = description;
-            document.getElementById("modal-link").href = link;
-            document.getElementById("modal").style.display = "flex";
+            modalImg.src = imageSrc;
+            modalTitle.innerText = title;
+            modalDesc.innerText = description;
+            modalLink.href = link;
+
+            modal.style.display = "flex"; // فتح المودال
         });
     });
 
-    // إغلاق النافذة عند النقر خارجها
-    document.getElementById("modal").addEventListener("click", function (e) {
-        if (e.target === this) {
+    // إغلاق المودال عند الضغط خارج المحتوى
+    modal.addEventListener("click", function (e) {
+        if (e.target === modal) {
             closeModal();
         }
     });
-}
 
-// دالة إغلاق النافذة
-function closeModal() {
-    document.getElementById("modal").style.display = "none";
-}
+    // دالة إغلاق المودال
+    function closeModal() {
+        modal.style.display = "none";
+    }
+
+    // زر الإغلاق
+    document.querySelector(".close").addEventListener("click", closeModal);
+});
